@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'DM Sans';
+	src: url('/src/fonts/DM_Sans/DMSans-VariableFont_opsz\,wght.ttf')
+		format('truetype');
+	font-weight: 125 950;
+	font-stretch: 75% 125%;
+	font-style: italic;
+}
+
+@layer base {
+	html {
+		font-family: 'DM Sans', system-ui, sans-serif;
+	}
+}
