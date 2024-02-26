@@ -42,7 +42,7 @@ export default function Footer() {
 					)}
 				</Field>
 
-				<Button type='submit' size='small' onClick={() => {}}>
+				<Button type='submit' size='small' style='primary' onClick={() => {}}>
 					Submit
 				</Button>
 			</Form>
