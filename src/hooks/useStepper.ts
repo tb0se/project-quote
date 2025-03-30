@@ -1,5 +1,5 @@
 import { createSignal } from 'solid-js';
-import { Step } from '../components/Stepper';
+import { Step } from '../types';
 
 export default function useStepper(steps: Step[]) {
 	const [index, setIndex] = createSignal<number>(0);

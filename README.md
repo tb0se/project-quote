@@ -1,28 +1,40 @@
-## Usage
+# Project Quote
 
-```bash
-$ npm install # or pnpm install or yarn install
+This is a multi step form to create a quote.
+
+## Getting started
+
+To get a local copy up and running follow these simple steps.
+
+### Yarn
+
+```sh
+    npm install --global yarn
 ```
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+### Installation
 
-## Available Scripts
+1. Clone the repository
 
-In the project directory, you can run:
+   ```sh
+   git clone https://github.com/tb0se/project-quote.git
+   ```
 
-### `npm run dev`
+2. Install the required packages
+
+   ```sh
+   yarn
+   ```
+
+## Usage
+
+Start the web application locally:
+
+```sh
+   yarn dev
+```
 
 Runs the app in the development mode.<br>
-Open [http://localhost:5173](http://localhost:5173) to view it in the browser.
-
-### `npm run build`
-
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-## Deployment
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 Learn more about deploying your application with the [documentations](https://vitejs.dev/guide/static-deploy.html)

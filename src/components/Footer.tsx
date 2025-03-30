@@ -8,10 +8,11 @@ type EmailForm = {
 };
 
 export default function Footer() {
-	const [emailForm, { Form, Field, FieldArray }] = createForm<EmailForm>();
+	const [emailForm, { Form, Field }] = createForm<EmailForm>();
 
-	const handleSubmit: SubmitHandler<EmailForm> = (values, event) => {
+	const handleSubmit: SubmitHandler<EmailForm> = () => {
 		// Runs on client
+		console.log('', emailForm);
 	};
 
 	return (
@@ -35,6 +36,7 @@ export default function Footer() {
 					{(field, props) => (
 						<InputField
 							{...props}
+							id={field.name}
 							type='email'
 							placeholder='Enter your email'
 							size='small'

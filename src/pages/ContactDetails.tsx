@@ -15,11 +15,11 @@ type ContactDetailsForm = {
 };
 
 export default function ContactDetails() {
-	const [loginForm, { Form, Field, FieldArray }] =
-		createForm<ContactDetailsForm>();
+	const [loginForm, { Form, Field }] = createForm<ContactDetailsForm>();
 
-	const handleSubmit: SubmitHandler<ContactDetailsForm> = (values, event) => {
-		// Runs on client
+	const handleSubmit: SubmitHandler<ContactDetailsForm> = () => {
+		// TODO:
+		console.log('', loginForm);
 	};
 
 	return (
@@ -42,7 +42,9 @@ export default function ContactDetails() {
 						minLength(2, 'Your name must have 2 characters or more.'),
 					]}
 				>
-					{(field, props) => <InputField {...props} type='text' label='Name' />}
+					{(field, props) => (
+						<InputField {...props} id={field.name} type='text' label='Name' />
+					)}
 				</Field>
 				<Field
 					name='email'
@@ -52,7 +54,7 @@ export default function ContactDetails() {
 					]}
 				>
 					{(field, props) => (
-						<InputField {...props} type='email' label='Email' />
+						<InputField {...props} id={field.name} type='email' label='Email' />
 					)}
 				</Field>
 				<Field
@@ -63,12 +65,22 @@ export default function ContactDetails() {
 					]}
 				>
 					{(field, props) => (
-						<InputField {...props} type='tel' label='Phone Number' />
+						<InputField
+							{...props}
+							id={field.name}
+							type='tel'
+							label='Phone Number'
+						/>
 					)}
 				</Field>
 				<Field name='companyName'>
 					{(field, props) => (
-						<InputField {...props} type='text' label='Company' />
+						<InputField
+							{...props}
+							id={field.name}
+							type='text'
+							label='Company'
+						/>
 					)}
 				</Field>
 			</Form>
