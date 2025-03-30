@@ -1,4 +1,10 @@
-import { createForm, SubmitHandler } from '@modular-forms/solid';
+import {
+	createForm,
+	email,
+	minLength,
+	required,
+	SubmitHandler,
+} from '@modular-forms/solid';
 import InputField from '../components/InputField';
 
 type ContactDetailsForm = {
@@ -29,15 +35,33 @@ export default function ContactDetails() {
 				onSubmit={handleSubmit}
 				class='grid grid-cols-1 md:grid-cols-2 gap-4'
 			>
-				<Field name='name'>
+				<Field
+					name='name'
+					validate={[
+						required('Please enter your name.'),
+						minLength(2, 'Your name must have 2 characters or more.'),
+					]}
+				>
 					{(field, props) => <InputField {...props} type='text' label='Name' />}
 				</Field>
-				<Field name='email'>
+				<Field
+					name='email'
+					validate={[
+						required('Please enter your email.'),
+						email('The email address is badly formatted.'),
+					]}
+				>
 					{(field, props) => (
 						<InputField {...props} type='email' label='Email' />
 					)}
 				</Field>
-				<Field name='phoneNumber'>
+				<Field
+					name='phoneNumber'
+					validate={[
+						required('Please enter your phone number.'),
+						minLength(2, 'Your phone number must have 2 characters or more.'),
+					]}
+				>
 					{(field, props) => (
 						<InputField {...props} type='tel' label='Phone Number' />
 					)}
