@@ -7,11 +7,12 @@ type BudgetForm = {
 };
 
 export default function Budget() {
-	const [loginForm, { Form, Field }] = createForm<BudgetForm>();
+	const [budgetForm, { Form }] = createForm<BudgetForm>();
 	const [selectedOption, setSelectedOption] = createSignal<string>('');
 
-	const handleSubmit: SubmitHandler<BudgetForm> = (values, event) => {
+	const handleSubmit: SubmitHandler<BudgetForm> = () => {
 		// Runs on client
+		console.log('', budgetForm);
 	};
 
 	const options = [

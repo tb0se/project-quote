@@ -6,7 +6,6 @@ import {
 	Switch,
 	createEffect,
 	createSignal,
-	onCleanup,
 } from 'solid-js';
 import { Step } from '../types';
 
@@ -65,7 +64,7 @@ export default function Stepper(props: Props) {
 			<Switch>
 				<Match when={!isMobile()}>
 					<For each={props.steps()}>
-						{(item, index) => {
+						{(_item, index) => {
 							return (
 								<>
 									<p class='rounded-full bg-primary text-center text-neutral-100 p-1 h-8 w-8'>

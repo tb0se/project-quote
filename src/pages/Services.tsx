@@ -8,11 +8,12 @@ type ContactDetailsForm = {
 };
 
 export default function Services() {
-	const [loginForm, { Form, Field }] = createForm<ContactDetailsForm>();
+	const [loginForm, { Form }] = createForm<ContactDetailsForm>();
 	const [selectedOption, setSelectedOption] = createSignal<string>('');
 
-	const handleSubmit: SubmitHandler<ContactDetailsForm> = (values, event) => {
-		// Runs on client
+	const handleSubmit: SubmitHandler<ContactDetailsForm> = () => {
+		//TODO:
+		console.log('', loginForm);
 	};
 
 	const options = [
@@ -48,6 +49,7 @@ export default function Services() {
 					selected={selectedOption}
 					onChange={setSelectedOption}
 				/>
+				{/* TODO: */}
 				{/* <Field name='service'>
 					{(field, props) => (
 						<ServiceButton
